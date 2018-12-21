@@ -28,28 +28,58 @@ POP_ARTICLES = ''
 POP_AUTHORS = ''
 ERRONEOUS_DAY = ''
 
-response = '''
-1. Quais são os três artigos mais populares de todos os tempos?
-%s
+if(arg == 'web'):
+    response = '''
+    <!DOCTYPE html>
+    <meta charset="UTF-8">
+    <title>Análise de logs</title>
+    <h1>Análise de logs</h1>
+    <h2>Quais são os três artigos mais populares de todos os tempos?</h2>
+    <ol>%s</ol>
+    <h2>Quem são os autores de artigos mais populares de todos os tempos?</h2>
+    <ol>%s</ol>
+    <h2>Em quais dias mais de 1%% das requisições resultaram em erros?</h2>
+    <ul>%s</ul>
+    '''
 
-2. Quem são os autores de artigos mais populares de todos os tempos?
-%s
+    POP_ARTICLES = '''
+        <li><em>%s</em> — %s views</li>
+    '''
 
-3. Em quais dias mais de 1%% das requisições resultaram em erros?
-%s
-'''
+    POP_AUTHORS = '''
+        <li><em>%s</em> — %s views</li>
+    '''
 
-POP_ARTICLES = '''
-    %s — %s views
-'''
+    POP_AUTHORS = '''
+        <li><em>%s</em> — %s views</li>
+    '''
 
-POP_AUTHORS = '''
-    %s — %s views
-'''
+    ERRONEOUS_DAY = '''
+        <li><em>%s</em> — %s views</li>
+    '''
+else:
+    response = '''
+    1. Quais são os três artigos mais populares de todos os tempos?
+    %s
 
-ERRONEOUS_DAY = '''
-    %s — %s%%
-'''
+    2. Quem são os autores de artigos mais populares de todos os tempos?
+    %s
+
+    3. Em quais dias mais de 1%% das requisições resultaram em erros?
+    %s
+    '''
+
+    POP_ARTICLES = '''
+        %s — %s views
+    '''
+
+    POP_AUTHORS = '''
+        %s — %s views
+    '''
+
+    ERRONEOUS_DAY = '''
+        %s — %s%%
+    '''
 
 # queries usadas
 # 1. Quais são os três artigos mais populares de todos os tempos?
