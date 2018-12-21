@@ -86,6 +86,9 @@ def get_response():
 def main():
     r = get_response()
     print(r)
+    text_file = open("output.txt", "w")
+    text_file.write(r)
+    text_file.close()
 
 
 main()
