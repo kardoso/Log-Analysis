@@ -55,7 +55,7 @@ if(arg == 'web'):
     '''
 
     ERRONEOUS_DAY = '''
-        <li><em>%s</em> — %s views</li>
+        <li><em>%s</em> — %s%%</li>
     '''
 else:
     response = '''
