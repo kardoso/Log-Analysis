@@ -1,0 +1,26 @@
+
+    1. Quais são os três artigos mais populares de todos os tempos?
+    
+        Candidate is jerk, alleges rival — 338647 views
+    
+        Bears love berries, alleges bear — 253801 views
+    
+        Bad things gone, say good people — 170098 views
+    
+
+    2. Quem são os autores de artigos mais populares de todos os tempos?
+    
+        Ursula La Multa — 507594 views
+    
+        Rudolf von Treppenwitz — 423457 views
+    
+        Anonymous Contributor — 170098 views
+    
+        Markoff Chaney — 84557 views
+    
+
+    3. Em quais dias mais de 1% das requisições resultaram em erros?
+    
+        2016-07-17 — 2.26%
+    
+    
