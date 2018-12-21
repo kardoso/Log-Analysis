@@ -125,6 +125,7 @@ def get_response():
     final_response = response % (resp1, resp2, resp3)
     return final_response
 
+
 # definir método main de acordo com o argumento
 if(arg == 'web'):
     @app.route('/', methods=['GET'])
