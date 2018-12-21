@@ -32,9 +32,9 @@ Os arquivos `analysis.py` e `newsdala.sql` devem estar na pasta compartilhada(a 
 
 Já logado na máquina virtual acesse a pasta com o comando `cd /vagrant`.
 
-Será preciso criar algumas views para o programa rodar sem interrupções.
-
 Use o comando `psql -d news -f newsdata.sql` para abrir a linha de comando, criar o banco de dados **_news_** e executar as declarações SQL do arquivo **_newsdata.sql_**.
+
+Será preciso criar algumas views para o programa rodar sem interrupções.
 
 Abra a linha de comando PostgreSQL novamente utilizando o comando `psql news`
 
@@ -54,7 +54,7 @@ CREATE VIEW mostpopular AS
   ORDER BY views DESC;
 ```
 
-Crie outra view, agora chamada requests com o seguinte comando:
+Crie outra _view_, agora chamada _requests_, com o seguinte comando:
 ```sql
 CREATE VIEW requests AS
   SELECT 
