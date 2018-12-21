@@ -125,13 +125,22 @@ def get_response():
     final_response = response % (resp1, resp2, resp3)
     return final_response
 
+# definir método main de acordo com o argumento
+if(arg == 'web'):
+    @app.route('/', methods=['GET'])
+    def main():
+        return get_response()
+else:
+    def main():
+        r = get_response()
+        print(r)
+        text_file = open("output.txt", "w")
+        text_file.write(r)
+        text_file.close()
 
-def main():
-    r = get_response()
-    print(r)
-    text_file = open("output.txt", "w")
-    text_file.write(r)
-    text_file.close()
-
-
-main()
+if __name__ == '__main__':
+    # executar o web app se o argumento for 'web'
+    if(arg == 'web'):
+        app.run(host='0.0.0.0', port=8000)
+    else:
+        main()
