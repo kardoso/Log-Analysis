@@ -18,6 +18,11 @@ try:
 except IndexError:
     arg = ''
 
+# argumento 'web'
+if(arg == 'web'):
+    from flask import Flask
+    app = Flask(__name__)
+
 response = ''
 POP_ARTICLES = ''
 POP_AUTHORS = ''
