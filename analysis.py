@@ -10,6 +10,34 @@
 import psycopg2
 
 
+response = ''
+POP_ARTICLES = ''
+POP_AUTHORS = ''
+ERRONEOUS_DAY = ''
+
+response = '''
+1. Quais são os três artigos mais populares de todos os tempos?
+%s
+
+2. Quem são os autores de artigos mais populares de todos os tempos?
+%s
+
+3. Em quais dias mais de 1%% das requisições resultaram em erros?
+%s
+'''
+
+POP_ARTICLES = '''
+    %s — %s views
+'''
+
+POP_AUTHORS = '''
+    %s — %s views
+'''
+
+ERRONEOUS_DAY = '''
+    %s — %s%%
+'''
+
 # queries usadas
 # 1. Quais são os três artigos mais populares de todos os tempos?
 q1 = '''SELECT title, views FROM mostpopular LIMIT 3;'''
@@ -39,11 +67,25 @@ def get_query(query):
 
 # executa as queries e retorna o documento com as respostas
 def get_response():
-    return 'response'
+    resp1 = (
+        "".join(POP_ARTICLES % (article, views)
+                for article, views in get_query(q1))
+    )
+    resp2 = (
+        "".join(POP_AUTHORS % (author, views)
+                for author, views in get_query(q2))
+    )
+    resp3 = (
+        "".join(ERRONEOUS_DAY % (day, errors)
+                for day, errors in get_query(q3))
+    )
+    final_response = response % (resp1, resp2, resp3)
+    return final_response
 
 
 def main():
-    print(get_response)
+    r = get_response()
+    print(r)
 
 
 main()
