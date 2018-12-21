@@ -9,6 +9,14 @@
 
 import psycopg2
 
+import sys
+arg = ''
+
+# Argumentos para executar em web app ou não
+try:
+    arg = sys.argv[1]
+except IndexError:
+    arg = ''
 
 response = ''
 POP_ARTICLES = ''
