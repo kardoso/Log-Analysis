@@ -28,7 +28,7 @@ Inicie a máquina virtual no diretório da pasta vagrant com `vagrant up` (Isso 
 
 Faça o login na máquina usando o comando `vagrant ssh`
 
-Os arquivos `analysis.py` e `newsdala.sql` devem estar na pasta compartilhada(a pasta vagrant).
+Os arquivos `analysis.py` e `newsdata.sql` devem estar na pasta compartilhada(a pasta vagrant).
 
 Já logado na máquina virtual acesse a pasta com o comando `cd /vagrant`.
 
