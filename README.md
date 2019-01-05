@@ -14,8 +14,6 @@ O resultado pode ser exibido no terminal e gerar um arquivo txt com o mesmo cont
 
 [Vagrant](https://www.vagrantup.com) ou o arquivo com a máquina configurada [aqui](https://d17h27t6h515a5.cloudfront.net/topher/2017/June/5948287e_fsnd-virtual-machine/fsnd-virtual-machine.zip)
 
-[Dados](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip) - O arquivo sql para ser analisado
-
 [PostgreSQL](https://www.postgresql.org/) (É automáticamente iniciado dentro da máquina virtual, não é preciso instalar)
 
 [Flask](http://flask.pocoo.org/) (Caso queira exibir o resultado em um browser através de um servidor local. Também já está dentro da máquina configurada, não é preciso instalar)
@@ -24,6 +22,8 @@ E um **terminal**.
 
 
 ## Prepare o ambiente
+Descompacte o arquivo `newsdata.zip` para ter acesso ao arquivo sql com o banco de dados.
+
 Inicie a máquina virtual no diretório da pasta vagrant com `vagrant up` (Isso pode demorar um pouco se for a primeira vez).
 
 Faça o login na máquina usando o comando `vagrant ssh`
@@ -38,7 +38,7 @@ Será preciso criar algumas views para o programa rodar sem interrupções.
 
 Abra a linha de comando PostgreSQL novamente utilizando o comando `psql news`
 
-Crie uma _view_ chamada _mostpopular_ com o seguinte comando:
+Crie uma _view_ chamada _mostpopular_ com os nomes dos autores, artigos e quantas vezes os artigos foram vistos com o seguinte comando:
 ```sql
 CREATE VIEW mostpopular AS
   SELECT 
@@ -54,7 +54,7 @@ CREATE VIEW mostpopular AS
   ORDER BY views DESC;
 ```
 
-Crie outra _view_, agora chamada _requests_, com o seguinte comando:
+Crie outra _view_, agora chamada _requests_ com os dias, a quantidade de requests no dia e status do request, com o seguinte comando:
 ```sql
 CREATE VIEW requests AS
   SELECT 
